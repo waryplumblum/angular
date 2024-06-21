@@ -24,10 +24,14 @@ const song = 'New Song';
 const { song:anotherSong, audioVolume:volume, songDuration:duration, details /*:{ author }*/} = audioPlayer;
 const { author, year } = details;
 
-console.log('Song: ', anotherSong);
-console.log('Volume: ', volume);
-console.log('Duration: ', duration);
-console.log('Author: ', author);
-console.log('Year: ', year);
+// console.log('Song: ', anotherSong);
+// console.log('Volume: ', volume);
+// console.log('Duration: ', duration);
+// console.log('Author: ', author);
+// console.log('Year: ', year);
+
+const [ p1, p2, trunks = 'Not found' ]: string[] = ['Goku','Vegeta'];
+
+console.log('Personaje 3: ', trunks);
 
 export{};
