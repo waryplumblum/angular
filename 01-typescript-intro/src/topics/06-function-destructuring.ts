@@ -1,6 +1,6 @@
 
 
-interface Product {
+export interface Product {
     description: string;
     price: number;
 }
@@ -22,7 +22,7 @@ interface TaxCalculationOptions{
 
 // function taxCalculation( options:TaxCalculationOptions ): [ number, number ]{
 // function taxCalculation( { tax, products }:TaxCalculationOptions ): [ number, number ]{
-function taxCalculation( options:TaxCalculationOptions ): [ number, number ]{
+export function taxCalculation( options:TaxCalculationOptions ): [ number, number ]{
     let total = 0;
 
     const { products, tax } = options;
@@ -53,6 +53,3 @@ console.log('Total', total);
 console.log('Tax', taxTotal);
 
 // * La tarea es aplicar la destructuracion de todo el ejercicio.
-
-
-export{};
