@@ -20,26 +20,39 @@ interface TaxCalculationOptions{
     products: Product[];
 }
 
-function taxCalculation( options:TaxCalculationOptions ): number[]{
+// function taxCalculation( options:TaxCalculationOptions ): [ number, number ]{
+// function taxCalculation( { tax, products }:TaxCalculationOptions ): [ number, number ]{
+function taxCalculation( options:TaxCalculationOptions ): [ number, number ]{
     let total = 0;
 
-    options.products.forEach( product => {
-        total += product.price;
+    const { products, tax } = options;
+
+    products.forEach( ({price}) => {
+        total += price;
     });
-    return [total, total * options.tax];
+    return [total, total * tax];
 }
 
 const shoppingCart = [ phone , tablet ];
 const tax = 0.15;
 
-const result = taxCalculation({
+const [ total, taxTotal] = taxCalculation({
     products: shoppingCart,
     tax,
 });
 
-console.log('Total', result[0]);
-console.log('Tax', result[1]);
+const {description:descriptionPhone,price:pricePhone} = phone;
+const {description:descriptionTablet,price:priceTablet} = tablet;
+
+console.log('Descripcion: ', descriptionPhone);
+console.log('Precio: ', pricePhone);
+console.log('Descripcion: ', descriptionTablet);
+console.log('Precio: ', priceTablet);
+
+console.log('Total', total);
+console.log('Tax', taxTotal);
 
 // * La tarea es aplicar la destructuracion de todo el ejercicio.
+
 
 export{};
