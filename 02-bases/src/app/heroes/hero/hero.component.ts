@@ -18,4 +18,13 @@ export class HeroComponent {
     return `${ this.name } - ${ this.age }`;
   }
 
+  changeHero():void {
+    //throw 'Metodo no implementado';
+    this.name = 'Spiderman';
+  }
+
+  changeAge():void {
+    this.age = 18;
+  }
+
 }
