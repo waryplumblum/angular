@@ -23,4 +23,8 @@ export class MainPageComponent {
     this.characters.unshift(character);
   }
 
+  onDeleteCharacter( index:number ) {
+    this.characters.splice(index,1);
+  }
+
 }
